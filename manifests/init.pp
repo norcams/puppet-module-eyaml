@@ -104,7 +104,7 @@ class eyaml (
   }
 
   exec { 'eyaml_createkeys':
-    path    => '/bin:/usr/bin:/sbin:/usr/sbin',
+    path    => '/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin',
     command => "eyaml createkeys --pkcs7-private-key=${private_key_path} --pkcs7-public-key=${public_key_path}",
     creates => $private_key_path,
     require => File['eyaml_keys_dir'],
